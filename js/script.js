@@ -17,10 +17,10 @@ function saiu () {
 
 function processar () {
     const txtn = document.getElementById('txtnome')
-    const txtn = document.getElementById('txtidade')
+    const txti = document.getElementById('txtidade')
 
     let nome = txtn.value 
-    let idade = Number(TextMetrics.value)
+    let idade = Number(txti.value)
 
     //&&
     if (nome == '' || txti.value == '') {
@@ -51,13 +51,17 @@ function processar () {
         classCSS = 'aceito'
     } else if (idade < 80) {
         classe = 'Fila Prioritária'
-        classCSS = 'prioritária'
+        classCSS = 'prioritaria'
     } else {
         classe = 'Fila Prioritária Especial 80+'
         classCSS = 'especial'
     }
 
     let guiche = ''
-    
+    switch(diaSem) {
+        case 0:
+            guiche = 'Fechado (Domingo)'
+            
+    }
 
 }
