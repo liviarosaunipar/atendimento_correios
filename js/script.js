@@ -61,7 +61,37 @@ function processar () {
     switch(diaSem) {
         case 0:
             guiche = 'Fechado (Domingo)'
-            
+            break
+        case 1: 
+            guiche = 'Guichê A - Setor de Documentação'
+            break
+        case 2:
+            guiche = 'Guichê B - Setor de Contratos'
+            break
+        case 3:
+            guiche = 'Guichê C - Finanças'
+            break
+        case 4:
+            guiche = 'Guichê D - Recursos Humanos'
+            break
+        case 5:
+            guiche = 'Guichê E - Suporte Geral'
+            break
+        case 6:
+            guiche = 'Fechado'
+            break
+        default:
+            guiche = '[ERRO] Dia inválido'
+            break
     }
 
+    res.className = classCSS
+    res.innerHTML = `<p>${saudacao}, <strong>${nome.toUpperCase()}</strong>!</p>`
+    res.innerHTML += `<p>Sua classificação: <strong>${classe}</strong></p>`
+    
+    if (diaSem = 0 || diaSem == 6) {
+        res.innerHTML += `<p>Status: <strong style="color:red">${guiche}</strong></p>`
+    } else {
+        res.innerHTML += `<p>Por favor, dirija-se ao: <strong>${guiche}</strong></p>`
+    }
 }
